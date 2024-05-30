@@ -32,4 +32,6 @@ class Comment(models.Model):
     recipes = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='comments')
     created_at = models.DateTimeField(auto_now_add=True)
     comment = models.TextField()
-    email = models.EmailField()
+
+    def __str__(self):
+        return f"Comments by {self.name}"
